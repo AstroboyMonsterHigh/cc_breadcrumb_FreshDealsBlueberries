@@ -1,8 +1,41 @@
-.breadcrumb li {
-    display: inline;
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.breadcrumb li+li::before {
-	padding: 10px;
-	content: ">";
+.breadcrumb li {
+    display: inline-block;
+}
+
+.breadcrumb li:not(first-child)::before {
+    content: ">";
+    padding: 10px;
+}
+
+.breadcrumb a {
+    text-decoration: underline;
+    color: blue;
+}
+
+.blueberry {
+      margin: 10px;
+}
+
+.location {
+    background-color: yellow;
+}
+
+.attribute {
+    background-color: orange;
+}
+
+.breadcrumb li.attribute::before {
+    content: "";
+    padding: 10px;
+}
+
+.breadcrumb li.attribute::after {
+    content: "x";
+    padding: 10px;
 }
