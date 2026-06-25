@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--
+Pseudo-elements
+
+✅ Key Takeaways for Beginners\
+- ::before = Adds content before the element's content
+- ::after = Adds content after the element's content
+- content property is REQUIRED (even if empty: content: "")
+- li:last-child::after removes the separator from the final item
+- Pseudo-elements are pure CSS - no HTML changes needed!
+
+This approach keeps your HTML clean and semantic while giving you full visual control through CSS! 🎨
+-->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  /* ===== BASIC RESET ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background: #f4f6f9;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ===== BREADCRUMB STYLES ===== */
+  .breadcrumb {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+  }
+
+  .breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+
+  /* ======================================== */
+  /* PSEUDO-ELEMENT 1: THE SEPARATOR (::after) */
+  /* ======================================== */
+  .breadcrumb li::after {
+    content: "›";           /* The arrow symbol */
+    margin: 0 12px;         /* Space around it */
+    color: #999;            /* Gray color */
+    font-size: 20px;        /* Bigger arrow */
+  }
+
+  /* Remove separator from LAST item */
+  .breadcrumb li:last-child::after {
+    content: "";            /* Empty content = nothing shows */
+    margin: 0;              /* Remove margin too */
+  }
+
+  /* ======================================== */
+  /* PSEUDO-ELEMENT 2: LOCATION ICON (::before) */
+  /* ======================================== */
+  .location a::before {
+    content: "📁 ";         /* Folder icon */
+    font-size: 14px;
+  }
+
+  /* ======================================== */
+  /* PSEUDO-ELEMENT 3: ATTRIBUTE ICON (::before) */
+  /* ======================================== */
+  .attribute a::before {
+    content: "🏷️ ";         /* Tag icon */
+    font-size: 14px;
+  }
+
+  /* ===== LINK STYLES ===== */
+  .breadcrumb a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+
+  /* Location links - BLUE */
+  .location a {
+    color: #1a5276;
+    background: #d6eaf8;
+  }
+
+  .location a:hover {
+    background: #aed6f1;
+  }
+
+  /* Attribute links - ORANGE */
+  .attribute a {
+    color: #7d3c00;
+    background: #fdebd0;
+  }
+
+  .attribute a:hover {
+    background: #fad7a0;
+  }
+
+  /* Current page (no link) */
+  .breadcrumb li:last-child {
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background: #e8e8e8;
+    color: #333;
+  }
+
+  /* ===== SECTION TITLES ===== */
+  h2 {
+    color: #1a1a2e;
+    margin: 30px 0 10px 0;
+  }
+
+  .note {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    border-left: 4px solid #4a90d9;
+  }
+
+  .note strong {
+    color: #1a1a2e;
+  }
+
+  /* ===== LEGEND ===== */
+  .legend {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .legend-box {
+    padding: 5px 14px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .legend-box.location {
+    background: #d6eaf8;
+    color: #1a5276;
+  }
+
+  .legend-box.attribute {
+    background: #fdebd0;
+    color: #7d3c00;
+  }
+
+  .legend-box.separator {
+    background: #eee;
+    color: #999;
+  }
+
+  /* ===== ANATOMY DIAGRAM ===== */
+  .anatomy {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-top: 30px;
+  }
+
+  .anatomy h3 {
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .anatomy code {
+    background: #f4f4f4;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #c7254e;
+  }
+
+  .anatomy .pseudo-demo {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 10px 0;
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px dashed #ccc;
+  }
+
+  .anatomy .highlight-before {
+    color: #1a5276;
+    font-weight: bold;
+  }
+
+  .anatomy .highlight-after {
+    color: #999;
+    font-weight: bold;
+  }
+
+  .anatomy .highlight-content {
+    color: #333;
+  }
+
+  .anatomy ul {
+    margin: 10px 0 0 20px;
+    line-height: 2;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ============================================ -->
+  <!-- TITLE                                        -->
+  <!-- ============================================ -->
+  <h1 style="color: #1a1a2e; margin-bottom: 10px;">🍞 Breadcrumb with Pseudo-Elements</h1>
+  <p style="color: #666; margin-bottom: 30px;">Learn how <code>::before</code> and <code>::after</code> create breadcrumb elements</p>
+
+  <!-- ============================================ -->
+  <!-- EXAMPLE 1: BASIC BREADCRUMB                  -->
+  <!-- ============================================ -->
+  <h2>Example 1: Basic Breadcrumb</h2>
+  <div class="note">
+    <strong>Locations</strong> = Blue with 📁 (folder) &nbsp;|&nbsp; 
+    <strong>Attributes</strong> = Orange with 🏷️ (tag)
+  </div>
+
+  <div class="breadcrumb">
+    <ol>
+      <li class="location"><a href="#">Home</a></li>
+      <li class="location"><a href="#">Products</a></li>
+      <li class="location"><a href="#">Electronics</a></li>
+      <li class="attribute"><a href="#">Smartphones</a></li>
+      <li class="attribute"><a href="#">Apple</a></li>
+      <li class="attribute">iPhone 15 Pro</li>
+    </ol>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- EXAMPLE 2: BLOG                              -->
+  <!-- ============================================ -->
+  <h2>Example 2: Blog Breadcrumb</h2>
+
+  <div class="breadcrumb">
+    <ol>
+      <li class="location"><a href="#">Home</a></li>
+      <li class="location"><a href="#">Blog</a></li>
+      <li class="location"><a href="#">Technology</a></li>
+      <li class="attribute"><a href="#">AI</a></li>
+      <li class="attribute">How to Train a Neural Network</li>
+    </ol>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- EXAMPLE 3: DASHBOARD                         -->
+  <!-- ============================================ -->
+  <h2>Example 3: Dashboard Breadcrumb</h2>
+
+  <div class="breadcrumb">
+    <ol>
+      <li class="location"><a href="#">Dashboard</a></li>
+      <li class="location"><a href="#">Users</a></li>
+      <li class="attribute"><a href="#">Active</a></li>
+      <li class="attribute">Sarah Johnson</li>
+    </ol>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- ANATOMY DIAGRAM                              -->
+  <!-- ============================================ -->
+  <div class="anatomy">
+    <h3>🔍 How Pseudo-Elements Work in This Breadcrumb</h3>
+    
+    <div class="pseudo-demo">
+      <span class="highlight-before">::before</span>
+      <span class="highlight-content">  "Home"  </span>
+      <span class="highlight-after">::after</span>
+    </div>
+
+    <p style="margin: 15px 0 10px 0; font-weight: bold;">What each pseudo-element does:</p>
+    
+    <ul>
+      <li>
+        <strong><code>::before</code></strong> on <code>.location a</code> 
+        → Adds 📁 <strong>before</strong> the link text
+      </li>
+      <li>
+        <strong><code>::before</code></strong> on <code>.attribute a</code> 
+        → Adds 🏷️ <strong>before</strong> the link text
+      </li>
+      <li>
+        <strong><code>::after</code></strong> on <code>.breadcrumb li</code> 
+        → Adds › <strong>after</strong> each item (except the last one)
+      </li>
+      <li>
+        <strong><code>:last-child::after</code></strong> 
+        → Removes the separator from the last item
+      </li>
+    </ul>
+
+    <div style="background: #f0f4f8; padding: 15px; border-radius: 6px; margin-top: 15px;">
+      <p style="font-weight: bold; margin-bottom: 5px;">💡 Beginner Tip:</p>
+      <p style="font-size: 14px; color: #444;">
+        Think of <code>::before</code> as "insert before the content" and 
+        <code>::after</code> as "insert after the content". 
+        They're like invisible extra elements that only CSS can create!
+      </p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- LEGEND                                       -->
+  <!-- ============================================ -->
+  <div class="legend">
+    <div class="legend-item">
+      <span class="legend-box location">LOCATION</span>
+      <span>📁 Added with <code>::before</code></span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-box attribute">ATTRIBUTE</span>
+      <span>🏷️ Added with <code>::before</code></span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-box separator">SEPARATOR</span>
+      <span>› Added with <code>::after</code></span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
