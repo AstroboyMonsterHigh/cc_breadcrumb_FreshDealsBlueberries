@@ -2,7 +2,8 @@
   width: 100%;
   height: 21.75rem;
   padding-left: 10rem;
-  background-image: url('../img/hero.png');
+  background-image: url('../img/sea_grapes.png');
+  background-color: #f0f0f0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -75,4 +76,11 @@
   .landing .product-list {
     grid-template-columns: 1fr;
   }
+}
+
+.product-item .image-container img {
+  width: 100%;
+  height: 12.5rem; /* Keeps a unified grid height */
+  object-fit: cover; /* Crops excess edges cleanly without distortion */
+  display: block;
 }
