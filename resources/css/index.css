@@ -8,19 +8,20 @@
   background-size: cover;
   background-position: center;
   text-align: left;
-  color: hsla(0, 0%, 100%, 1);;
+  color: hsla(0, 0%, 100%, 1);
+  outline: solid 2px red;
 }
 
 .blueberry {
   background-image: url('https://content.codecademy.com/courses/ui-breadcrumbs/blueberry-hero.png');
-}
+} 
 
 .hero h2 {
   padding-top: 10rem;
   font-family: 'PT Serif', serif;
   font-size: 2.25rem;
 }
-
+ 
 .hero p {
   width: 24.125rem;
   line-height: 1.5;
@@ -84,3 +85,4 @@
   object-fit: cover; /* Crops excess edges cleanly without distortion */
   display: block;
 }
+
