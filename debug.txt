@@ -1,0 +1,32 @@
+Script started on 2026-06-29 12:29:57-06:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="77" LINES="44"]
+[?2004h✨ [38;5;39mS10+ tab [0m@ .../codecademy/cc_breadcrumb_FreshDealsBlueberries 
+🪐 $ (reverse-i-search)`': p': time git [7mp[27mush cc working2y': time [7mpy[27mthon3 -m http.server[19P🪐 $ time py
+[?2004lServing HTTP on :: port 8000 (http://[::]:8000/) ...
+::ffff:127.0.0.1 - - [29/Jun/2026 12:30:16] "GET /about.html HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [29/Jun/2026 12:30:16] "GET /resources/css/about.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [29/Jun/2026 12:30:16] "GET /resources/img/Screenshot_20260605_081643_YouTube.jpg HTTP/1.1" 304 -
+^C
+Keyboard interrupt received, exiting.
+
+real	0m35.405s
+user	0m0.076s
+sys	0m0.024s
+[?2004h✨ [38;5;39mS10+ tab [0m@ .../codecademy/cc_breadcrumb_FreshDealsBlueberries 
+🪐 $ (reverse-i-search)`': l': time git add about.html bestsellers.html deals.html index.html resources/css/base.css resources/css/index.css sell.html resources/css/dea[7ml[27ms.css resources/img/grocery.png resources/img/store.jpeg [C[C[C[C[C[C[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pi': time { [7mli[27mvereload; }
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@v': time { [7mliv[27m[1@e': time { [7mlive[27m[21P🪐 $ time { live
+[?2004l[32m[I 260629 12:30:59 server:331](B[m Serving on http://127.0.0.1:35729
+[32m[I 260629 12:30:59 handlers:62](B[m Start watching changes
+[32m[I 260629 12:30:59 handlers:64](B[m Start detecting changes
+[33m[W 260629 12:31:19 web:2439](B[m 404 GET /resources/img/about.png (127.0.0.1) 2.27ms
+[32m[I 260629 12:31:19 handlers:135](B[m Browser Connected: http://127.0.0.1:35729/about.html
+^C[32m[I 260629 12:32:07 server:358](B[m Shutting down...
+
+real	1m8.319s
+user	0m0.412s
+sys	0m0.542s
+[?2004h✨ [38;5;39mS10+ tab [0m@ .../codecademy/cc_breadcrumb_FreshDealsBlueberries 
+🪐 $ exit
+[?2004lexit
+
+Script done on 2026-06-29 12:32:12-06:00 [COMMAND_EXIT_CODE="0"]
