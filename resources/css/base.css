@@ -272,3 +272,23 @@ footer a {
   }
 }
 
+/* My edits
+breadcrumb
+*/
+
+.breadcrumb {
+  list-style: none; /* Removes the bullet points */
+  padding: 0;       /* Removes default left padding */
+  margin: 0;        /* Removes default margin */
+  font-family: Courier New;
+}
+
+.breadcrumb li {
+  display: inline; /* Makes all items sit on one line */
+}
+
+.breadcrumb li + li::before {
+  content: ">";    /* The separator symbol */
+  padding: 0 8px;  /* Adds space around the separator */
+  color: red;     /* Makes the separator slightly gray */
+}
