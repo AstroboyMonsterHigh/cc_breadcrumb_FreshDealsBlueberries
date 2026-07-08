@@ -267,14 +267,43 @@ footer a {
 
 
 
-/* LAHV buttons animation */
-a {
-  text-decoration: none;
-  transition: .3s;
+/* `css styling : hover */
+
+nav {
+    text-decoration: none;
+    position: relative;
 }
 
-a:hover {
-  color: hsla(0, 0%, 13%, .6);
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0066cc;
+    transition: width 0.3s ease;
+}
+
+nav:hover::after {
+    width: 100%;
+}
+
+/* Center-growing underline */
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #0066cc;
+    transition: width 0.3s ease;
+}
+
+nav:hover::after {
+    width: 100%;
 }
 
 
