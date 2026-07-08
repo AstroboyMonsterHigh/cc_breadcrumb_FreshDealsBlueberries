@@ -2,7 +2,10 @@
 
 .about h1 {
   width: 100%;
-  padding: 10.5rem 0;
+  height: 15rem;            /* Explicit box footprint replaces the double 10.5rem padding */
+  display: flex;            /* Flexbox utilities center text without bloating block size */
+  align-items: center;
+  justify-content: center;
   background-image: url('../img/about.png');
   background-color: grey;
   background-repeat: no-repeat;
@@ -10,8 +13,10 @@
   background-position: center;
   font-family: 'PT Serif', sans-serif;
   font-size: 9rem;
-  color: hsla(0, 0%, 100%, 1);
+  color: white;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
 }
+
 
 .about .information {
   padding: 3.75rem 20% 6.75rem 20%;
